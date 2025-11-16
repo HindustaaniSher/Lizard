@@ -30,6 +30,17 @@ in your browser.
 
 ---
 
+## Encryption
+
+If you enter a password, Lizard encrypts the payload using:
+
+- **Scrypt** (for key derivation)  
+- **AES-GCM** (authenticated encryption)
+
+Without the password, extraction won’t work.
+
+---
+
 ## Want to Use Locally?
 
 ```bash
