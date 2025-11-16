@@ -70,4 +70,4 @@ source venv/bin/activate       # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 flask run
 ```
-Now, open the app at `http://127.0.0.1:5000`
+Then, open the app at `http://127.0.0.1:5000`
