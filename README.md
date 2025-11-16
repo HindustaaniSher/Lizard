@@ -30,10 +30,29 @@ in your browser.
 
 ---
 
+## How it works?
+
+Lizard uses **LSB Steganography**, a method that hides data in the least significant bits of image or audio files.  
+These tiny bit changes are invisible to the human eye and impossible to notice by listening.
+
+For images:  
+The tool takes the binary data of the file you want to hide, breaks it into bits, and stores those bits in the pixel values of PNG or BMP files.  
+Your hidden content becomes part of the image itself.
+
+For audio:  
+The same technique is applied to WAV samples. The least significant bits of each audio sample are modified to store data without altering the sound.
+
+If you choose to set a password:  
+Your data is encrypted using **AES-GCM**, a secure encryption method. Even if someone extracts bits manually, they cannot read the hidden content.
+
+When you upload the stego file again:  
+Lizard reads the embedded metadata header, reconstructs the hidden bits, decrypts the content if needed, and returns the original text or file.
+
+---
+
 ## Encryption
 
 If you enter a password, Lizard encrypts the payload using:
-
 - **Scrypt** (for key derivation)  
 - **AES-GCM** (authenticated encryption)
 
